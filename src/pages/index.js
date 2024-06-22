@@ -128,20 +128,7 @@ const StyledGrid2Col = styled.div`
      
       overflow:hidden;
 `
-/*
-const NewsItemDate =   styled.div`
-  display:flex;
-  width:100%;
-  align-items:center;
-  justify-content:flex-start;
-  gap:.8rem;
-  color:${colors.greyLight};
-  font-size:1.4rem;
-  svg path {fill:${colors.orange};}
-  svg path:first-of-type {
-   fill: ${colors.orange};
-  }
-`*/
+
 const IntroNewsEdito = styled.div`
 grid-area: edito;
 
@@ -169,11 +156,9 @@ const LogoWrapper = styled.div`
  display:flex;
  flex-direction:column;
  align-items:center;
- ${mq.tablet`
-          
-          gap:1rem;
-         
-      `}
+ ${mq.tablet`         
+      gap:1rem;
+  `}
 `
 /*
 const News = styled.div`
@@ -182,9 +167,9 @@ const News = styled.div`
 `*/
 
 const Teaser = styled.h1`
-  color:${colors.orange};
+  color:${colors.dark};
   font-family: 'Raleway';
-  font-weight: normal;
+  font-weight: 700;
   font-size:2.4rem; 
   text-align:center;
   max-width:862px;
@@ -237,17 +222,13 @@ const IndexPage = ({ data, pageContext, location }) => {
   const [{st}, set] = useSpring(()=>({st:0}))
   const interpolationTurbine = st.to(o => `rotate(${o/6}deg`)
 
- /* useEffect(() => {
-    const onScroll = e => set({st: e.target.documentElement.scrollTop});
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  });*/
   useEffect(() => {
     const onMouseMove = e => set({st: (e.clientX + e.clientY)}) ;
     window.addEventListener("mousemove", onMouseMove);
    
     return () => window.removeEventListener("mousemove", onMouseMove);
   });
+
   //console.log("interpolationTurbine:", interpolationTurbine)
   const dateDuJour = new Date();
   dateDuJour.setHours(0, 0, 0, 0);
@@ -263,6 +244,18 @@ const IndexPage = ({ data, pageContext, location }) => {
         <StyledGrid2Col>      
           <IntroNewsEdito>
           
+              <SectionTitle>Agenda</SectionTitle>
+              <AgendaListWrapper>
+              { _map(dateFutures.slice(0,6), (item, i) => (
+                  <AgendaItem key={i} item={item} path="spectacles/"/> 
+               
+              ))}
+
+              </AgendaListWrapper> 
+            
+              <BtnPrimary to={`/agenda`}><FormattedMessage id="btn__toutes les dates"/></BtnPrimary>
+
+            
             <Text lightmode color="white" dangerouslySetInnerHTML={{ __html: 
                 editoHomepage.contenu}}/> 
             <BtnPrimary  to={`/actualites`}><FormattedMessage id="btn_plus-de-news"/></BtnPrimary>

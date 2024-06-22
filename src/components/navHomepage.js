@@ -48,29 +48,7 @@ margin-bottom:4rem;
    
 `;
 
-/*
 
-const LanguageSwitcherWrap = styled.div`
-  position:absolute;
-  right: 0;
-  padding: 0 2rem;
-  background-color: white;
-  height: 100%;
-  ${mq.tablet`
-    display:none;
-   `}
-
-`;
-
-const HeaderInner = styled.div`
-  display: flex;
-  width: 124rem;
-  justify-content: space-between;
-  align-items: center;
-  padding:  1rem 0;
-  
-`;
-*/
 
 
 const MainMenu = styled.ul`
@@ -108,12 +86,12 @@ const LinkHeader = styled(props => <Link {...props} />)`
   position:relative;
   color: ${colors.dark};
   &:hover {
-    color: ${colors.blue};
+    color: ${colors.dark};
   }
 
   ${font.navigationItem}
   &.active {
-    color: ${colors.blue};
+    color: ${colors.dark};
   }
   &:before {
     content: "";
@@ -200,7 +178,7 @@ const CloseMenuMobile = styled.button`
 /*MENU MOBILE*/
 const StyledMenuAltRight = styled(MenuAltRight)`
   color:${colors.dark};
-  color:${colors.blue};
+
 
 `
 const StyledXCircle = styled(XCircle)`
@@ -296,7 +274,7 @@ export default function NavHomepage({ location }) {
             <LinkHeader to="/contact" activeClassName="active"><FormattedMessage id="menu__contact"/></LinkHeader>
           </MenuItem>
           <MenuItem>
-            <IconLink to="https://www.facebook.com/Laturbineprod" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.blue, fontSize: '20px'}} />}  text="Facebook"/>     
+            <IconLink to="https://www.facebook.com/label.folie" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.blue, fontSize: '20px'}} />}  text="Facebook"/>     
           </MenuItem>
           
         </MainMenu>
@@ -330,7 +308,7 @@ export default function NavHomepage({ location }) {
                 <LinkHeader to="/contact" activeClassName="active"><FormattedMessage id="menu__contact"/></LinkHeader> 
             </ItemMobileNav>
             <ItemMobileNav>
-              <IconLink to="https://www.facebook.com/Laturbineprod" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.yellow, fontSize: '28px', margin:'10px'}} />}  text="Facebook"/>     
+              <IconLink to="https://www.facebook.com/label.folie" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.yellow, fontSize: '28px', margin:'10px'}} />}  text="Facebook"/>     
         </ItemMobileNav>
           </nav>
          

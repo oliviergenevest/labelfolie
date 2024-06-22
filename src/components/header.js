@@ -70,7 +70,7 @@ const HeaderInner = styled.div`
   justify-content: space-between;
   align-items: center;
   padding:  1rem 0;
-     /* flex-wrap: nowrap;*/
+  /* flex-wrap: nowrap;*/
 `;
 
 

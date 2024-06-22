@@ -59,5 +59,8 @@
   },
   "bugs": {
     "url": "https://github.com/oliviergenevest/labelfolie/issues"
+  },
+  "optionalDependencies": {
+    "@parcel/watcher-linux-x64-glibc": "^2.4.1"
   }
 }

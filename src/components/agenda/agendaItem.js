@@ -24,6 +24,10 @@ const AgendaItemProjet =   styled(Text)`
   flex-shrink:0;
   color:${colors.blue}; 
   font-weight:600;  
+   & a:hover {
+  text-decoration:none!important;
+  }
+  
 `
 
 const AgendaItemMois =   styled.span`
@@ -49,6 +53,10 @@ const AgendaItemContent =   styled.div`
   display:flex;
   gap:1rem;
   width: 100%;
+  flex-wrap:wrap;
+  & a:hover {
+  text-decoration:underline;
+  }
 `
 
 
@@ -64,7 +72,7 @@ const AgendaItem = ({item, path = ''}) => {
             <div style={{'lineHeight':'1.5rem'}}> 
               <AgendaItemMois>
                 {format(new Date(item.dateDebutEvenement), 'LLLL yyyy', {locale: fr})}
-              </AgendaItemMois> / 
+              </AgendaItemMois> |  
          
               <AgendaItemVille> {item.ville}</AgendaItemVille>
               <AgendaItemContent>
