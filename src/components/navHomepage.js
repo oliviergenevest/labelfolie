@@ -284,7 +284,7 @@ export default function NavHomepage({ location }) {
             <LinkHeader to="/actualites" activeClassName="active"><FormattedMessage id="menu__actu"/></LinkHeader>
           </MenuItem>
           <MenuItem>
-            <LinkHeader to="/spectacles" activeClassName="active"><FormattedMessage id="menu__spectacles"/></LinkHeader>
+            <LinkHeader to="/artistes" activeClassName="active"><FormattedMessage id="menu__spectacles"/></LinkHeader>
           </MenuItem>
            <MenuItem>
             <LinkHeader to="/agenda" activeClassName="active"><FormattedMessage id="menu__agenda"/></LinkHeader>

@@ -12,7 +12,7 @@ import facebookRect from '@iconify/icons-brandico/facebook-rect';*/
 import { FormattedMessage} from 'react-intl'
 
 export const WrapperFooter = styled.div`
-
+  background:white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,7 +97,7 @@ const Footer= ({ location }) => {
      
       <FooterBottom>
      
-      <span>© Turbine Production - {year} - </span><Link to="/credits"> <FormattedMessage id="footer__credits"/></Link> - <Link to="/mentions-legales"> <FormattedMessage id="footer__mentions-legales"/></Link> - <Link to="/protection-des-donnees"><FormattedMessage id="footer__data-protection"/></Link>{/* -   <GLink to="/en">EN</GLink> | <GLink to="/">FR</GLink> */}
+      <span>2006-{year} © Label Folie - La Friche Mimi - 4, rue du Gua - 34880 Lavérune - France </span><Link to="/credits"> <FormattedMessage id="footer__credits"/></Link> - <Link to="/mentions-legales"> <FormattedMessage id="footer__mentions-legales"/></Link> - <Link to="/protection-des-donnees"><FormattedMessage id="footer__data-protection"/></Link>{/* -   <GLink to="/en">EN</GLink> | <GLink to="/">FR</GLink> */}
         
       </FooterBottom>
     </WrapperFooter>

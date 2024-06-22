@@ -17,6 +17,9 @@ export const colors = {
   blueLight:'#EBEBF3', // bleu discordeon light utilisé pour fond 
   orange:'#FFB44B', //jaune orange turbine
  
+  yellow:'#f5c707', // jaune Label Folie
+
+
   yellowLight:'#F1EFD4',
 
 
@@ -55,7 +58,7 @@ export const font = {
   // haut a droite rappel de navigation utilisé comme H1 pour referencement
   pageTitle : ` 
             padding-top:2rem;
-            font-family: 'Syne';
+          font-family: 'Raleway';
             font-size:2.8rem;
             line-height:normal;
             font-weight:600;
@@ -77,7 +80,7 @@ export const font = {
             }
           `,
   h2: `
-          font-family: 'Syne';
+          font-family: 'Raleway';
           font-style: normal;
           font-weight: 600;
           font-size: 2.4rem;
@@ -117,11 +120,12 @@ export const font = {
           `,
 
   navigationItem:`
-           font-family: 'Syne';
+           font-family: 'Raleway';
             font-style: normal;
-            font-weight: normal;
-            font-size: 18px;
+            font-weight: 500;
+            font-size: 20px;
             line-height: 22px;
+            letter-spacing:1px;
           `,
    
 };

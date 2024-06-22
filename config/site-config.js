@@ -1,8 +1,8 @@
 module.exports = {
-  siteUrl: 'https://www.turbineproduction.com',
+  siteUrl: 'https://www.labelfolie.com',
   sitemapPath: '/sitemap.xml',
-  title: 'Turbine Production',
-  description: "Capsule d'accompagnement artistique",
+  title: 'Label Folie',
+  description: "Booking - Production - Edition",
   author: '@oliviergenevest',
   locales: {fr:
     {

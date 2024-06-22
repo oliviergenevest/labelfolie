@@ -183,7 +183,7 @@ const News = styled.div`
 
 const Teaser = styled.h1`
   color:${colors.orange};
-  font-family: 'Syne';
+  font-family: 'Raleway';
   font-weight: normal;
   font-size:2.4rem; 
   text-align:center;
@@ -273,15 +273,9 @@ const IndexPage = ({ data, pageContext, location }) => {
             <NavHomepage/>
            <LogoWrapper>
               <animated.div style={{transform:interpolationTurbine,"zIndex":"1"}}>
-                <Logo image={logo.gatsbyImageData} alt="Turbine Production" />
+                <Logo image={logo.gatsbyImageData} alt="Label Folie" />
               </animated.div>
-              <StaticImage 
-              src="../images/typo turbine prod.png" 
-             style={{'marginTop':'-6rem','zIndex':'0'}}
               
-              height={140}
-              placeholder="blurred" 
-              alt="Turbine Production" />
             </LogoWrapper>
             <Teaser>{slogan}</Teaser>
             <FlexListeSpectacle>
@@ -295,7 +289,7 @@ const IndexPage = ({ data, pageContext, location }) => {
         
        <HomepagePageWrapper>
 
-          <BgWrap color={colors.orange} style={{marginTop:'0'}}>
+          <BgWrap color="#f8f8f8" style={{marginTop:'0'}}>
          
             <PageInner>
               <SectionTitle>Agenda</SectionTitle>
@@ -306,17 +300,7 @@ const IndexPage = ({ data, pageContext, location }) => {
               ))}
 
               </AgendaListWrapper> 
-            {/*  <AgendaListWrapper>
-              { _map(nodes, (item, i) => {
-                  (new Date(item.dateDebutEvenement) >= dateDuJour || new Date(item.dateFinEvenement) >= dateDuJour) && nbDates++
-                
-                  return ( 
-                  ((new Date(item.dateDebutEvenement) >= dateDuJour || new Date(item.dateFinEvenement) >= dateDuJour )  && nbDates <= 6) && 
-                  <AgendaItem key={i} item={item} path="spectacles/"/> 
-                  )
-              }
-              )}
-              </AgendaListWrapper>  */}
+            
               <BtnPrimary to={`/agenda`}><FormattedMessage id="btn__toutes les dates"/></BtnPrimary>
 
             </PageInner>

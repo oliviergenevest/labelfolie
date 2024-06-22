@@ -32,7 +32,7 @@ export const Banner = styled.div`
 `;
 
 export const PageWrapper = styled.div`
-  min-height: calc(100vh - 8rem);
+  min-height: calc(100vh - 13.5rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

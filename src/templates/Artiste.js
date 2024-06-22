@@ -17,7 +17,7 @@ import PlayerZik from '../components/players/PlayerZik';
 //import  AgendaItemCondensed  from '../components/agenda/agendaItemCondensed';
 import  AgendaItemLight  from '../components/agenda/agendaItemLight';
 // import Swiper core and required modules
-import { Navigation,  FreeMode, Keyboard } from 'swiper';
+import { Navigation,  FreeMode, Keyboard } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -34,11 +34,11 @@ const PageInnerProject = styled.div`
   display: grid;
 
   grid-template-columns: 1fr 2fr;
-  grid-template-areas: "encart" "main";
-  grid-template-columns: minmax(350px, 1fr) minmax(0, 2fr);
+  grid-template-areas: "main" "encart";
+  grid-template-columns:  minmax(0, 2fr) minmax(350px, 1fr) ;
   grid-gap: 5rem;
 
-  ${mq.tabletSmall` 
+  ${mq.tablet` 
   grid-template-columns: 1fr;
   grid-template-columns:minmax(0, 1fr);
   grid-gap:1rem;
@@ -48,11 +48,11 @@ const PageInnerProject = styled.div`
 
 const ColEncart = styled.div`
 
-  background-color: ${colors.orange};
+  background-color: ${colors.light};
   padding:3.5rem;
   ${mq.tabletSmall` 
     padding:2rem;
-    grid-area:encart;
+    grid-area: encart;
   `}
 
 `
@@ -150,9 +150,9 @@ const TitleSpectacleWrapper  = styled.div`
 `
 
 const TitleSpectacle  = styled.h1`
-  color:${colors.blue};
+  color:${colors.dark};
   font-size:3.2rem;
-  font-family: 'Syne';
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   line-height: 38px;
@@ -160,7 +160,7 @@ const TitleSpectacle  = styled.h1`
 `
 
 const CompagnieName  = styled(Text)`
-  font-family:'Syne';
+ font-family: 'Raleway';
   font-weight: 700;
 
 `
@@ -198,7 +198,7 @@ padding:2rem;
 `;
 */
 
-const Spectacle = ({ data, pageContext, location }) => {
+const Artiste = ({ data, pageContext, location }) => {
 
   const {  nom, compagnie, teaser, content, diaporama, encart,seoMetaTags} = data.spectacle;
 /*
@@ -276,71 +276,70 @@ const Spectacle = ({ data, pageContext, location }) => {
 
               <div>
                 <TitleSpectacle>{nom}</TitleSpectacle>
-                <CompagnieName>{compagnie}</CompagnieName>
-              </div>
+               
+              </div> 
             </TitleSpectacleWrapper>
            
             <TeaserSpectacle dangerouslySetInnerHTML={{ __html:teaser }} />
           </HeaderSpectacle>
           <PageInnerProject>
-          <ColEncart>
-          <Text dangerouslySetInnerHTML={{ __html:encart }} style={{"textAlign":"left"}}/>
-           
-            </ColEncart>
-        <div>
-          {(content.blocks.length > 0) && <StructuredText
-              data={content}
-              renderBlock={({record}) => {
-                if (record.__typename === "DatoCmsPlayerZik") {
-                  return <PlayerZik soundcloud urlPlayer={record.urlPlayer}/>
-                
-              }
-                if (record.__typename === "DatoCmsImage") {
-                  return <GatsbyImage image={record.image.gatsbyImageData} alt=""/>
-                }
-                if (record.__typename === "DatoCmsVideo") {
-                  return  <Video
-                  videoSrcURL={record.video.url}
-                  //videoSrcURL={record.video.url.replace('watch?v=', 'embed/')}
-                  videoTitle={record.video.title}
-                  />
-              }
-              
-
-                return (
-                  <>
-                    <p>bloc inconnu</p>
-                    <pre>{JSON.stringify(record, null, 2)}</pre>
-                  </>
-                )
-
-              }}
-            />
-          }
-
  
-           {(data.dates.nodes.length > 0) &&  
-                <>
-                  <Text><br/><b>Tournées</b></Text>   
+            <div>         <CompagnieName dangerouslySetInnerHTML={{ __html:compagnie }}/>
+              {(content.blocks.length > 0) && <StructuredText
+                  data={content}
+                  renderBlock={({record}) => {
+                    if (record.__typename === "DatoCmsPlayerZik") {
+                      return <PlayerZik soundcloud urlPlayer={record.urlPlayer}/>
+                    
+                  }
+                    if (record.__typename === "DatoCmsImage") {
+                      return <GatsbyImage image={record.image.gatsbyImageData} alt=""/>
+                    }
+                    if (record.__typename === "DatoCmsVideo") {
+                      return  <Video
+                      videoSrcURL={record.video.url}
+                      //videoSrcURL={record.video.url.replace('watch?v=', 'embed/')}
+                      videoTitle={record.video.title}
+                      />
+                  }
                   
-                  <AgendaListWrapper>
-                  
-                 { data.dates.nodes.map((item, i) => {
-return (  <AgendaItemLight key={i} item={item} /> )
-                })
-                }
-                   {/* { _map(data.dates.nodes, (item, i) => (
-                     // (new Date(item.dateDebutEvenement) >= new Date()  || new Date(item.dateFinEvenement) >= new Date()) && 
-                  
-                     <AgendaItemLight key={i} item={item} /> 
-                       
-                   ))} */}
-                  </AgendaListWrapper>
-                </>
+
+                    return (
+                      <>
+                        <p>bloc inconnu</p>
+                        <pre>{JSON.stringify(record, null, 2)}</pre>
+                      </>
+                    )
+
+                  }}
+                />
               }
-              
-        </div>
-        
+
+    
+              {(data.dates.nodes.length > 0) &&  
+                    <><Spacer/>
+                      <h2>Les prochaines dates </h2>   
+                      <br/>
+                      <AgendaListWrapper>
+                      
+                    { data.dates.nodes.map((item, i) => {
+    return (  <AgendaItemLight key={i} item={item} /> )
+                    })
+                    }
+                      {/* { _map(data.dates.nodes, (item, i) => (
+                        // (new Date(item.dateDebutEvenement) >= new Date()  || new Date(item.dateFinEvenement) >= new Date()) && 
+                      
+                        <AgendaItemLight key={i} item={item} /> 
+                          
+                      ))} */}
+                      </AgendaListWrapper>
+                    </>
+                  }
+                  
+            </div>
+            <ColEncart>
+             <Text dangerouslySetInnerHTML={{ __html:encart }} style={{"textAlign":"left"}}/>
+            </ColEncart>
         </PageInnerProject>
         </PageInner>  
         <Spacer/>
@@ -354,7 +353,7 @@ export const projectQuery = graphql`
     dates: allDatoCmsAgenda(filter: {spectacle: {slug: {eq: $slug}}, isFuture:{eq: true}}, sort: {dateDebutEvenement: ASC}){
       nodes {
         id
-        
+        ville
         details
         dateDebutEvenement
         dateFinEvenement
@@ -408,4 +407,5 @@ export const projectQuery = graphql`
 `;
 
 
-export default Spectacle;
+export default Artiste;
+ 

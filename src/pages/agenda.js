@@ -46,22 +46,13 @@ export const agendaQuery = graphql`
       nodes {
         id  
         details
-        
+        ville
         dateDebutEvenement
         dateFinEvenement
         spectacle {
-          background { hex }
           compagnie
           nom
-          slug
-          image {
-            gatsbyImageData(
-              placeholder: BLURRED,
-              forceBlurhash: false,   
-              width:250,
-              height:173,
-            )
-          } 
+          slug 
         } 
       }
     }
@@ -86,7 +77,7 @@ const AgendaPage = ({ data, location }) => {
           <AgendaListWrapper>
             { _map(nodes, (item, i) => (
 
-                 <AgendaItem key={i} item={item} path='../spectacles/'/>
+                 <AgendaItem key={i} item={item} path='../artistes/'/>
             
             ))}
            

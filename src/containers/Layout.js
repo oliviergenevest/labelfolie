@@ -24,7 +24,7 @@ const messages = { en, fr };
 
 
 const SiteWrapper = styled.div`
-  background: white;
+  background: #f8f8f8;
 `;
 
 const Layout = ({ children, pageContext, location }) => {

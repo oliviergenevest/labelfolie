@@ -48,8 +48,8 @@ export const projetsPageQuery = graphql`
             gatsbyImageData(
               placeholder: BLURRED,
               forceBlurhash: false,   
-              width:578,
-              height:355,
+              width:567,
+              height:800,
             )
           }
       }
@@ -60,7 +60,7 @@ export const projetsPageQuery = graphql`
     }
   }
 `
-const SpectaclesPage =  ({ data }) => {
+const ArtistesPage =  ({ data }) => {
 
   const {
     titre,
@@ -88,7 +88,7 @@ const SpectaclesPage =  ({ data }) => {
   )
 }
 
-export default  SpectaclesPage
+export default  ArtistesPage
 
 export const Head = (props) => (
   <Seo meta={props.data.page.seoMetaTags} />

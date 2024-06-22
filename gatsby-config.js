@@ -26,7 +26,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-ZMXLP841XV", // Google Analytics / GA
+          "G-XXXXXXXX", // Google Analytics / GA
      ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds
@@ -51,7 +51,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.turbineproduction.com`,
+        siteUrl: `https://www.labelfolie.com`,
       },
     },
     {
@@ -71,9 +71,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-styled-components',
     },
-    {
-    resolve: `gatsby-plugin-netlify`,
-    },
+   
     {
       resolve: 'gatsby-plugin-layout',
       options: {
@@ -84,13 +82,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Turbine Production`,
-        short_name: `Turbine Production`,
+        name: `Label Folie`,
+        short_name: `Label Folie`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/images/logo-turbineproduction-manifest-square.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo-labelfolie-manifest-square.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

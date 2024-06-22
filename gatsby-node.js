@@ -90,8 +90,8 @@ exports.createPages = async ({ graphql, actions }) => {
           const next = index === 0 ? null : projets[index - 1].node*/
           const { slug } = projet.node;
           createPage({
-            path: `/spectacles/${slug}`,
-            component: require.resolve('./src/templates/Spectacle.js'),
+            path: `/artistes/${slug}`,
+            component: require.resolve('./src/templates/Artiste.js'),
             context: {
               slug,
              /* previous,

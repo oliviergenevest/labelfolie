@@ -32,7 +32,7 @@ export const aProposPageQuery = graphql`
       photoBiographie {
         gatsbyImageData(      
           placeholder: BLURRED,
-          width:400,
+          width:1204,
           forceBlurhash: false,
         )
       }
@@ -52,15 +52,13 @@ const AProposPage = ({data}) => {
     <Fragment>
 
       <PageWrapper>
+      <GatsbyImage image={photoBiographie.gatsbyImageData}  alt="Label Folie"/>
         <PageInner>
           <PageTitle dangerouslySetInnerHTML={{ __html: titre }} />
           
-          <Grid2Col>
-            <div>           <Spacer/> 
+               
                 <Text dangerouslySetInnerHTML={{ __html: contenu }} /> 
-            </div>
-            <div style={{'textAlign':'center'}}><GatsbyImage image={photoBiographie.gatsbyImageData}  alt="Turbine Production"/> </div>
-          </Grid2Col>
+           
       </PageInner>
       </PageWrapper>
     </Fragment>

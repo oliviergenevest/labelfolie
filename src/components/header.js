@@ -34,18 +34,18 @@ const LinkSocial = styled.a`
 `
 
 const Wrapper = styled.div`
-  background:#FFF7ED;
-  background:#ede4c9;
+
+  background:#fff;
   ${boxShadow};
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
-  border-top:6px solid ${colors.blue};
+ 
   ${mq.tablet`
      padding: 0 2rem;
-     border-top:4px solid ${colors.blue};
+    
     `}
    
 `;
@@ -96,7 +96,7 @@ const MenuItem = styled.li`
   &:hover {
     color: ${colors.blue};
   }
-  margin-right:2.5rem;
+  margin-right:3rem;
      
 `;
 
@@ -144,11 +144,9 @@ const LinkHeader = styled(props => <Link {...props} />)`
 `;
 
 const LogoLink = styled(LinkHeader)`
-  img {
-     height:8rem;
-  }
-  height:100%;
  
+  height:100%;
+ padding-bottom:1.5rem;
    ${mq.mobile`
       img { 
         height:5rem;
@@ -197,7 +195,7 @@ const CloseMenuMobile = styled.button`
 /*MENU MOBILE*/
 const StyledMenuAltRight = styled(MenuAltRight)`
   color:${colors.dark};
-  color:${colors.blue};
+
 
 `
 const StyledXCircle = styled(XCircle)`
@@ -274,16 +272,18 @@ export default function Header({ location }) {
     <Wrapper>
       <HeaderInner>
         <LogoLink to="/" title="Retour à l'accueil" >
-        <Boop scale={1.01} timing={200}><StaticImage src="../images/logo.png" alt="Turbine Production" /></Boop> 
+       {/*  <Boop scale={1.01} timing={200}>*/}
+          <StaticImage src="../images/logo-lf.jpg" alt="Label Folie" />
+      {/*  </Boop> */}
         </LogoLink>
        
         <MainMenu>
          
-          <MenuItem>
+         {/*  <MenuItem>
             <LinkHeader to="/actualites" activeClassName="active"><FormattedMessage id="menu__actu"/></LinkHeader>
-          </MenuItem>
+          </MenuItem>*/}
           <MenuItem>
-            <LinkHeader to="/spectacles" activeClassName="active"><FormattedMessage id="menu__spectacles"/></LinkHeader>
+            <LinkHeader to="/artistes" activeClassName="active"><FormattedMessage id="menu__spectacles"/></LinkHeader>
           </MenuItem>
            <MenuItem>
             <LinkHeader to="/agenda" activeClassName="active"><FormattedMessage id="menu__agenda"/></LinkHeader>
@@ -294,12 +294,12 @@ export default function Header({ location }) {
           <MenuItem>
             <LinkHeader to="/contact" activeClassName="active"><FormattedMessage id="menu__contact"/></LinkHeader>
           </MenuItem>
-          <MenuItem>
-            <IconLink to="https://www.facebook.com/Laturbineprod" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.blue, fontSize: '20px'}} />}  text="Facebook"/>     
+           <MenuItem>
+            <IconLink to="https://www.facebook.com/label.folie" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.blue, fontSize: '20px'}} />}  text="Facebook Label Folie"/>     
           </MenuItem>
           
         </MainMenu>
-       
+      
         
         <BurgerMenu  onClick={() => {setMobileNavOpen(true)}}
     aria-label="Navigation"><StyledMenuAltRight title="Navigation" size="48"/></BurgerMenu>
@@ -313,11 +313,11 @@ export default function Header({ location }) {
             <ItemMobileNav onClick={() => {setMobileNavOpen(!mobileNavOpen)}}>
               <LinkHeader to="/" ><FormattedMessage id="homepage"/></LinkHeader>
             </ItemMobileNav>
-            <ItemMobileNav onClick={() => {setMobileNavOpen(!mobileNavOpen)}} >
+           {/*  <ItemMobileNav onClick={() => {setMobileNavOpen(!mobileNavOpen)}} >
               <LinkHeader to="/actualites" activeClassName="active"><FormattedMessage id="menu__actu"/></LinkHeader>
-            </ItemMobileNav>
+            </ItemMobileNav>*/}
             <ItemMobileNav onClick={() => {setMobileNavOpen(!mobileNavOpen)}} >
-                <LinkHeader to="/spectacles" activeClassName="active"><FormattedMessage id="menu__spectacles"/></LinkHeader>
+                <LinkHeader to="/artistes" activeClassName="active"><FormattedMessage id="menu__spectacles"/></LinkHeader>
             </ItemMobileNav>
             <ItemMobileNav onClick={() => {setMobileNavOpen(!mobileNavOpen)}} >
             <LinkHeader to="/agenda" activeClassName="active"><FormattedMessage id="menu__agenda"/></LinkHeader>
@@ -329,7 +329,7 @@ export default function Header({ location }) {
                 <LinkHeader to="/contact" activeClassName="active"><FormattedMessage id="menu__contact"/></LinkHeader> 
             </ItemMobileNav>
             <ItemMobileNav>
-              <IconLink to="https://www.facebook.com/Laturbineprod" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.yellow, fontSize: '28px', margin:'10px'}} />}  text="Facebook"/>     
+              <IconLink to="https://www.facebook.com/label.folie" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.yellow, fontSize: '28px', margin:'10px'}} />}  text="Facebook Label Folie"/>     
         </ItemMobileNav>
           </nav>
          

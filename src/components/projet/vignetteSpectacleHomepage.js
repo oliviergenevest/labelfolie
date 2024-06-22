@@ -63,8 +63,8 @@ const ItemWrapper = styled(Link)`
 
 const VignetteImage =   styled(GatsbyImage)`
   display:flex;
-  border-radius:100%;
-  width:120px;
+  border-radius:20%;
+  width:220px;
   ${mq.tablet`
   width:100px;
   `}
@@ -90,7 +90,7 @@ const VignetteImage =   styled(GatsbyImage)`
 
 const VignetteSpectacleHomepage = ({item, format}) => {
     return (
-        <ItemWrapper to={`spectacles/`+item.slug} title={item.nom} format= {format}>
+        <ItemWrapper to={`artistes/`+item.slug} title={item.nom} format= {format}>
           
           <VignetteImage image={item.image.gatsbyImageData} alt={item.nom}/>
           <VignetteNom center>{item.nom}</VignetteNom>
