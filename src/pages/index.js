@@ -7,6 +7,8 @@ import styled from 'styled-components';
 /*import { Icon } from '@iconify/react';
 import FormatDate  from '../components/formatDate'*/
 import { colors ,mq} from '../consts/style';
+import {Reveal, Fade} from "react-awesome-reveal"
+import { fadeInUp } from "../style/animations"
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import {
   PageWrapper,
@@ -14,6 +16,7 @@ import {
   Flex,
   Text,
   SectionTitle,
+  SectionTitleLeft,
   BgWrap
 } from '../components/Elements';
 import  BtnPrimary  from '../components/buttons/ButtonRounded';
@@ -42,12 +45,13 @@ export const indexQuery = graphql`
         slug
         nom
         teaser
+        
         image {  
           gatsbyImageData(
             placeholder: BLURRED,
             forceBlurhash: false,   
-            width:250,
-            height:250,
+            width:150,
+            height:150,
           )
         }
     }
@@ -66,7 +70,7 @@ export const indexQuery = graphql`
        limit:6){
       nodes {
         id
-       
+        ville
         details
         dateDebutEvenement
         dateFinEvenement
@@ -75,13 +79,7 @@ export const indexQuery = graphql`
           compagnie
           slug
           background { hex }
-          image {
-            gatsbyImageData(
-             
-              width:200,
-              height:173,
-            )
-          } 
+          
         }
       }
     }
@@ -89,17 +87,12 @@ export const indexQuery = graphql`
 `;
 
 
- /*
- Requete  gatsbyImageData
- placeholder: BLURRED,
- forceBlurhash: false,   
- */
+ 
 
 const AgendaListWrapper =   styled.div`
 display:flex;
 flex-direction:column;
 width:100%; 
-/*gap:5rem;*/
 margin-top:2rem;
 `
 
@@ -107,15 +100,15 @@ margin-top:2rem;
 const StyledGrid2Col = styled.div`
   display: grid;
   height:auto;
-  //min-height:100vh;
-  background:${colors.blue};
+  
+  background:white;
   grid-template-columns: 1fr; 
-  grid-template-areas: "logo" "edito";
+  grid-template-areas: "edito" "logo";
                         
   ${mq.tablet_up`
    // max-height:100vh;
     
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 3fr 2fr;
     align-items: stretch; // 100% de la hauteur pour les 2 colonnes
     justify-content:center;
     grid-template-areas: "edito logo";
@@ -135,8 +128,10 @@ grid-area: edito;
 padding:4rem 4rem 4rem 6rem;
 display:flex;
 flex-direction: column;
-align-items:flex-start;
-justify-content:center;
+align-items:center;
+justify-content:flex-start;
+
+
 
 `
 const IntroColDroite = styled.div`
@@ -146,7 +141,7 @@ width:100%;
 display:flex;
 align-items:center;
 flex-direction:column;
-background:white;
+background:#f8f8f8;
   ${mq.tablet`
           padding:3rem;
   `}
@@ -188,7 +183,7 @@ const HomepagePageWrapper = styled(PageWrapper)`
 
 
 const FlexListeSpectacle = styled(Flex)`
-  column-gap:2rem;
+  column-gap:1rem;
   align-items:flex-start;
   margin-bottom:2rem;
   padding-top:6rem;
@@ -241,84 +236,47 @@ const IndexPage = ({ data, pageContext, location }) => {
   return (
     <Fragment>  
       
-        <StyledGrid2Col>      
+        <StyledGrid2Col>  
+              
           <IntroNewsEdito>
-          
-              <SectionTitle>Agenda</SectionTitle>
-              <AgendaListWrapper>
-              { _map(dateFutures.slice(0,6), (item, i) => (
-                  <AgendaItem key={i} item={item} path="spectacles/"/> 
-               
-              ))}
 
-              </AgendaListWrapper> 
-            
-              <BtnPrimary to={`/agenda`}><FormattedMessage id="btn__toutes les dates"/></BtnPrimary>
-
-            
-            <Text lightmode color="white" dangerouslySetInnerHTML={{ __html: 
-                editoHomepage.contenu}}/> 
-            <BtnPrimary  to={`/actualites`}><FormattedMessage id="btn_plus-de-news"/></BtnPrimary>
-
-          </IntroNewsEdito>
-
-          <IntroColDroite>
             <NavHomepage/>
-           <LogoWrapper>
-              <animated.div style={{transform:interpolationTurbine,"zIndex":"1"}}>
+            <Fade direction="down" triggerOnce>
+            <LogoWrapper>
+              <animated.div style={{/*transform:interpolationTurbine,"zIndex":"1"*/}}>
                 <Logo image={logo.gatsbyImageData} alt="Label Folie" />
               </animated.div>
-              
             </LogoWrapper>
+            </Fade>
             <Teaser>{slogan}</Teaser>
+            <Fade direction="left" delay="50">
             <FlexListeSpectacle>
-            { _map(spectacles, (item, i) => (
-                  <VignetteSpectacleHomepage key={i} item={item} format="full"/>
-            ))}
-           </FlexListeSpectacle>
+              { _map(spectacles, (item, i) => (
+                    <VignetteSpectacleHomepage key={i} item={item} format="full"/>
+              ))}
+            </FlexListeSpectacle>
+           </Fade>
+          </IntroNewsEdito>
+       
+          <IntroColDroite>
+              <Fade direction="up" triggerOnce>
+                <SectionTitle>Agenda</SectionTitle>
+              </Fade>
+              <Fade direction="up" triggerOnce>
+                <AgendaListWrapper>
+                  { _map(dateFutures.slice(0,6), (item, i) => (
+                      <AgendaItem key={i} item={item} path="artistes/"/> 
+                  
+                  ))}
+                </AgendaListWrapper> 
+              <BtnPrimary to={`/agenda`}><FormattedMessage id="btn__toutes les dates"/></BtnPrimary>
+              </Fade> 
           </IntroColDroite>  
           
         </StyledGrid2Col>
         
-       <HomepagePageWrapper>
-
-          <BgWrap color="#f8f8f8" style={{marginTop:'0'}}>
-         
-            <PageInner>
-              <SectionTitle>Agenda</SectionTitle>
-              <AgendaListWrapper>
-              { _map(dateFutures.slice(0,6), (item, i) => (
-                  <AgendaItem key={i} item={item} path="spectacles/"/> 
-               
-              ))}
-
-              </AgendaListWrapper> 
-            
-              <BtnPrimary to={`/agenda`}><FormattedMessage id="btn__toutes les dates"/></BtnPrimary>
-
-            </PageInner>
-          </BgWrap>
-          {/*
-          <PageInner>
-          { _map(data.news.nodes, (lastnews, i) => ( 
-                <News key={i}>
-                  <GatsbyImage image={lastnews.image.gatsbyImageData} alt={lastnews.titre}/>
-                    <h2  dangerouslySetInnerHTML={{ __html: lastnews.titre }} />
-                    <Text dangerouslySetInnerHTML={{ __html: lastnews.teaser}}/>
-                    <BtnPrimary to={`/actualites/${lastnews.slug}/`}><FormattedMessage id="btn_lire la suite"/></BtnPrimary>
-                  </News>
-                  )
-                )}
-          </PageInner>
-          <Spacer/>
-           */}
-
-         
-       
-
-    
       
-      </HomepagePageWrapper>
+  
      
     </Fragment>
   );

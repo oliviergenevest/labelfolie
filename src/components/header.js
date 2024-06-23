@@ -120,7 +120,7 @@ const LinkHeader = styled(props => <Link {...props} />)`
     background-color: #F0F3D3;
     border-radius:3px;
     width: 30px;
-    height: 4px;
+    height: 2px;
    
     opacity: ${props => (props.selected ? 1: 0 )};
     transform:translateX(${props => (props.selected ?"-50%": 0 )});
@@ -133,10 +133,10 @@ const LinkHeader = styled(props => <Link {...props} />)`
     left: 50%;
     border-radius:8px;
     bottom: -.65rem;
-    background-color: ${colors.orange};
+    background-color: ${colors.yellow};
    
     width: 100%;
-    height: 4px;
+    height: 2px;
     transform:translateX(-50%);
     transition: all 0.25s;   
     opacity: 1;
@@ -295,7 +295,7 @@ export default function Header({ location }) {
             <LinkHeader to="/contact" activeClassName="active"><FormattedMessage id="menu__contact"/></LinkHeader>
           </MenuItem>
            <MenuItem>
-            <IconLink to="https://www.facebook.com/label.folie" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.blue, fontSize: '20px'}} />}  text="Facebook Label Folie"/>     
+            <IconLink to="https://www.facebook.com/label.folie" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.dark, fontSize: '30px'}} />}  text="Facebook Label Folie"/>     
           </MenuItem>
           
         </MainMenu>

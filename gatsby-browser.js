@@ -13,5 +13,6 @@ import "@fontsource/syne";
 import "@fontsource/syne/500.css";
 import "@fontsource/syne/600.css";
 import "@fontsource/raleway";
+import "@fontsource/raleway/300.css";
 import "@fontsource/raleway/500.css";
 import "@fontsource/raleway/800.css";

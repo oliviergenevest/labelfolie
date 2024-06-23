@@ -8,9 +8,9 @@ import Boop from '../boop';
     display:inline-block;
     border-radius:4px;
     cursor:pointer;
-    background: ${props => props.reverse ? colors.orange : colors.blue};
-    border: 1px dashed white;
-    color: ${props => props.reverse ? colors.blue : colors.orange};
+    background: ${props => props.reverse ? colors.orange : colors.light};
+    border: 1px solid ${colors.dark};
+    color: ${props => props.reverse ? colors.blue : colors.dark};
     font-weight:400;
     padding: .5rem 2.5rem;
     margin: 0;
@@ -18,9 +18,9 @@ import Boop from '../boop';
     text-align: center;
     &:hover {
       text-decoration: none;
-      background:  ${colors.orange};
+    //  background:  ${colors.yellow};
       color: ${colors.dark}!important;
-   
+    border: 1px dashed ${colors.dark};
     }
   
 `;

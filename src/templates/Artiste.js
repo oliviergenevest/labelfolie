@@ -13,14 +13,12 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import {StructuredText} from "react-datocms";
 import Video from '../components/video';
 import PlayerZik from '../components/players/PlayerZik';
-
-//import  AgendaItemCondensed  from '../components/agenda/agendaItemCondensed';
+import {Reveal, Fade} from "react-awesome-reveal"
+import { fadeInUp } from "../style/animations"
 import  AgendaItemLight  from '../components/agenda/agendaItemLight';
 // import Swiper core and required modules
 import { Navigation,  FreeMode, Keyboard } from 'swiper/modules';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -160,20 +158,24 @@ const TitleSpectacle  = styled.h1`
 `
 
 const CompagnieName  = styled(Text)`
- font-family: 'Raleway';
-  font-weight: 700;
+ /*font-family: 'Raleway';*/
+ 
 
 `
 
 
 const TeaserSpectacle  = styled.div`
   font-style: italic;
-  font-weight: 400;
+ 
   font-size: 18px;
-  line-height: 150%;
+  line-height: 140%;
   color:${colors.blue};
+   font-weight: 500;
+  border-left: 2px dashed ${colors.greyLight};
+  padding-left: 1.6rem;
+  margin-top: 1.6rem;
   max-width:400px;
-  text-align:right;
+ // text-align:right;
   ${mq.tabletSmall` 
    text-align:left;
    max-width:100%;
@@ -209,8 +211,6 @@ const Artiste = ({ data, pageContext, location }) => {
     <Fragment>
       <Seo meta={seoMetaTags} />
       <PageWrapper>
-
-
 
         <DiaporamaFullWidth>
           <Swiper
@@ -259,10 +259,7 @@ const Artiste = ({ data, pageContext, location }) => {
                         </Boop>
                       </ArrowRightLinkNav>
               </Swiper>
-          </DiaporamaFullWidth>
-            
-
-   
+        </DiaporamaFullWidth>
           
         <PageInner>
         
@@ -275,20 +272,22 @@ const Artiste = ({ data, pageContext, location }) => {
               </Link>
 
               <div>
-                <TitleSpectacle>{nom}</TitleSpectacle>
-               
+                
+                  <Fade><TitleSpectacle>{nom}</TitleSpectacle></Fade>
+                
+                   <Reveal keyframes={fadeInUp} ><TeaserSpectacle dangerouslySetInnerHTML={{ __html:teaser }} /></Reveal>
               </div> 
             </TitleSpectacleWrapper>
            
-            <TeaserSpectacle dangerouslySetInnerHTML={{ __html:teaser }} />
+            <CompagnieName dangerouslySetInnerHTML={{ __html:compagnie }}/>
           </HeaderSpectacle>
           <PageInnerProject>
  
-            <div>         <CompagnieName dangerouslySetInnerHTML={{ __html:compagnie }}/>
+            <div>         
               {(content.blocks.length > 0) && <StructuredText
                   data={content}
                   renderBlock={({record}) => {
-                    if (record.__typename === "DatoCmsPlayerZik") {
+                    if (record.__typename === "DatoCmsSoundcloudPlayer") {
                       return <PlayerZik soundcloud urlPlayer={record.urlPlayer}/>
                     
                   }
@@ -323,15 +322,10 @@ const Artiste = ({ data, pageContext, location }) => {
                       <AgendaListWrapper>
                       
                     { data.dates.nodes.map((item, i) => {
-    return (  <AgendaItemLight key={i} item={item} /> )
+                        return (  <AgendaItemLight key={i} item={item} /> )
                     })
                     }
-                      {/* { _map(data.dates.nodes, (item, i) => (
-                        // (new Date(item.dateDebutEvenement) >= new Date()  || new Date(item.dateFinEvenement) >= new Date()) && 
-                      
-                        <AgendaItemLight key={i} item={item} /> 
-                          
-                      ))} */}
+                    
                       </AgendaListWrapper>
                     </>
                   }
@@ -388,6 +382,10 @@ export const projectQuery = graphql`
             video {
               url
             }
+          }         
+          ...on DatoCmsSoundcloudPlayer {
+            id: originalId
+            urlPlayer
           }         
         }
       }

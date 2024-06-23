@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import { colors } from "../consts/style"
 import Seo from "../components/Seo"
-
+import ContactForm from "../components/ContactForm/ContactForm"
 import {
   PageWrapper,
   PageInner,
@@ -57,10 +57,7 @@ const ContactPage =  ({ data }) => {
                 
               </div>
               <div>
-              <Text
-                  color={colors.dark}
-                  dangerouslySetInnerHTML={{ __html: contenuColonne }}
-                />
+             <ContactForm/>
 </div>
               {/* 
               <ContactForm />

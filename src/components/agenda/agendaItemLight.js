@@ -42,6 +42,7 @@ const AgendaItemContent =   styled.div`
   display:flex;
   gap:1rem;
   width: 100%;
+  & a:hover{ text-decoration:underline;}
 `
 
 
@@ -49,13 +50,13 @@ const AgendaItemContent =   styled.div`
 const AgendaItemLight = ({item, path = ''}) => {
   //console.log(item)
   return (
-    <div>
+  
         <ItemWrapper >
         
          <AgendaItemJour>
            { format(new Date(item.dateDebutEvenement), 'dd', {locale: fr})}
          </AgendaItemJour>
-         <div style={{'lineHeight':'1.5rem'}}> 
+         <div style={{'lineHeight':'2.5rem'}}> 
            <AgendaItemMois>
              {format(new Date(item.dateDebutEvenement), 'LLLL yyyy', {locale: fr})}
            </AgendaItemMois> / 
@@ -63,11 +64,10 @@ const AgendaItemLight = ({item, path = ''}) => {
            <AgendaItemVille> {item.ville}</AgendaItemVille>
            <AgendaItemContent>
              
-             <Text dangerouslySetInnerHTML={{ __html: item.details }}/>
+             <Text dangerouslySetInnerHTML={{ __html: item.details }}  style={{'lineHeight':'2.5rem'}}/>
            </AgendaItemContent>
           </div>
      </ItemWrapper>
-     </div>
- )
+  )
 }
 export default AgendaItemLight

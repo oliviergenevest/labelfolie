@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
-
+import {Reveal, Fade} from "react-awesome-reveal"
+import { fadeInUp } from "../style/animations"
 
 import Seo from "../components/Seo"
 
@@ -75,12 +76,14 @@ const ArtistesPage =  ({ data }) => {
         <PageInner>
           <PageTitle>{titre}</PageTitle>
       
-       
+          <Fade>
           <FlexListeSpectacle>
+         
             { _map(spectacles, (item, i) => (
                   <VignetteProjetPerso key={i} item={item} format="full"/>
             ))}
            </FlexListeSpectacle>
+           </Fade>
            </PageInner>
         <Spacer/>
       </PageWrapper>

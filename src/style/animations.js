@@ -11,13 +11,13 @@ export const spin = keyframes`
 `;
 
 export const fadeInUp = keyframes`
-  from {
-    top: 2rem;
+    from {
+    transform: translate3d(0, -2rem, 0);
     opacity: .25;
   }
 
   to {
-    top: 0;
+   transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 `;
@@ -26,8 +26,6 @@ export const slideIn = keyframes`
   from {
     transform: translateX(-100%);
     opacity: 0;
-   
-   
   }
 
   to {

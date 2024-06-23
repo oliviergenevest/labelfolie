@@ -36,7 +36,7 @@ const ItemWrapper = styled(Link)`
   justify-content: flex-start;
   align-items:${props => (props.format === 'short'  ? 'flex-start' : 'center' )};;
   
-  flex-basis:31.1%;
+  flex-basis:31%;
   flex-shrink: 1 ;
   flex-grow:0;
   ${mq.tablet`

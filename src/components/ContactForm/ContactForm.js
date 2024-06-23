@@ -14,20 +14,19 @@ const Input = styled.input`
 	display:block;
 	width:100%;
 	padding:1rem;
-	background-color:${colors.blueLight};
-	border-color: ${colors.dark};
+	background-color:${colors.light};
+	border: 1px dashed ${colors.dark};
 	resize:vertical;
-	border-style: none;
 	margin-bottom:1.5rem!important;
 `;
 const Textarea = styled.textarea`
 	display:block;
 	width:100%;
 	padding:1rem;
-	background-color:${colors.blueLight};
-	border-color: ${colors.yellow};
+	background-color:${colors.light};
+	
 	resize:vertical;
-	border-style: none;
+		border: 1px dashed ${colors.dark};
 	margin-bottom:1.5rem!important;
 `;
 const StyledFlex = styled(Flex)`

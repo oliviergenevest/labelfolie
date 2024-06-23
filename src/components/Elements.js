@@ -158,28 +158,25 @@ export const GridBienvenue= styled.div`
 
 
 
-export const SectionTitle = styled.h2`
+export const SectionTitle = styled.h1`
  display: block;
  margin: 0 auto;
  margin-bottom:1.5rem;
   ${font.title}
-   color:${colors.blue};
-    text-align:${props => props.centered ? 'center' : 'left' };
+   color:${colors.dark};
+    text-align:${props => props.$centered ? 'center' : 'left' };
     max-width:${props => props.maxWidth ? '600px' : 'none' };
    
 `;
 export const SectionTitleLeft = styled.h2`
-  position:sticky;
+  
   display: block;
-
-  font-size:84px;
+  padding-bottom:4rem;
+  font-size:48px;
   text-transform:uppercase;
-  color:${colors.yellowLight};
-  left:5rem;
-  top:5rem;
-  height:100px;
-  z-index:1;
-  align-self: flex-start;
+  color:${colors.yellow};
+  color:white;
+
    
 `;
 

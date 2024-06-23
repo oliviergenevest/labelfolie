@@ -63,7 +63,7 @@ ${mq.tablet_up`
   padding:0;
  `}
  & ::marker {
-    color:${colors.orange};
+    color:${colors.yellow};
  }
 
 `;
@@ -77,7 +77,7 @@ const MenuItem = styled.li`
   }
     margin-right:3rem;
      
-    &:first-child::marker,  &:last-child::marker  {
+    &:first-child::marker /*,  &:last-child::marker */ {
     color:transparent;
     }
 `;
@@ -115,7 +115,7 @@ const LinkHeader = styled(props => <Link {...props} />)`
     left: 50%;
     border-radius:8px;
     bottom: -.65rem;
-    background-color: ${colors.orange};
+    background-color: ${colors.yellow};
     width: 100%;
     height: 2px;
     transform:translateX(-50%);
@@ -258,9 +258,7 @@ export default function NavHomepage({ location }) {
        
         <MainMenu>
          
-          <MenuItem>
-            <LinkHeader to="/actualites" activeClassName="active"><FormattedMessage id="menu__actu"/></LinkHeader>
-          </MenuItem>
+          
           <MenuItem>
             <LinkHeader to="/artistes" activeClassName="active"><FormattedMessage id="menu__spectacles"/></LinkHeader>
           </MenuItem>
@@ -273,9 +271,7 @@ export default function NavHomepage({ location }) {
           <MenuItem>
             <LinkHeader to="/contact" activeClassName="active"><FormattedMessage id="menu__contact"/></LinkHeader>
           </MenuItem>
-          <MenuItem>
-            <IconLink to="https://www.facebook.com/label.folie" icon={<Icon title="Facebook" icon={facebookRect} style={{color: colors.blue, fontSize: '20px'}} />}  text="Facebook"/>     
-          </MenuItem>
+        
           
         </MainMenu>
        
@@ -292,11 +288,9 @@ export default function NavHomepage({ location }) {
             <ItemMobileNav onClick={() => {setMobileNavOpen(!mobileNavOpen)}}>
               <LinkHeader to="/" ><FormattedMessage id="homepage"/></LinkHeader>
             </ItemMobileNav>
+           
             <ItemMobileNav onClick={() => {setMobileNavOpen(!mobileNavOpen)}} >
-              <LinkHeader to="/actualites" activeClassName="active"><FormattedMessage id="menu__actu"/></LinkHeader>
-            </ItemMobileNav>
-            <ItemMobileNav onClick={() => {setMobileNavOpen(!mobileNavOpen)}} >
-                <LinkHeader to="/spectacles" activeClassName="active"><FormattedMessage id="menu__spectacles"/></LinkHeader>
+                <LinkHeader to="/artistes" activeClassName="active"><FormattedMessage id="menu__spectacles"/></LinkHeader>
             </ItemMobileNav>
             <ItemMobileNav onClick={() => {setMobileNavOpen(!mobileNavOpen)}} >
             <LinkHeader to="/agenda" activeClassName="active"><FormattedMessage id="menu__agenda"/></LinkHeader>

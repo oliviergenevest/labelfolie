@@ -64,7 +64,7 @@ const ItemWrapper = styled(Link)`
 const VignetteImage =   styled(GatsbyImage)`
   display:flex;
   border-radius:20%;
-  width:220px;
+  width:150px;
   ${mq.tablet`
   width:100px;
   `}
