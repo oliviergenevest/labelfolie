@@ -241,13 +241,13 @@ const IndexPage = ({ data, pageContext, location }) => {
           <IntroNewsEdito>
 
             <NavHomepage/>
-            <Fade direction="down" triggerOnce>
+            <Reveal keyframes={fadeInUp}  triggerOnce>
             <LogoWrapper>
               <animated.div style={{/*transform:interpolationTurbine,"zIndex":"1"*/}}>
                 <Logo image={logo.gatsbyImageData} alt="Label Folie" />
               </animated.div>
             </LogoWrapper>
-            </Fade>
+            </Reveal>
             <Teaser>{slogan}</Teaser>
             <Fade direction="left" delay="50">
             <FlexListeSpectacle>
@@ -262,7 +262,7 @@ const IndexPage = ({ data, pageContext, location }) => {
               <Fade direction="up" triggerOnce>
                 <SectionTitle>Agenda</SectionTitle>
               </Fade>
-              <Fade direction="up" triggerOnce>
+              <Reveal keyframes={fadeInUp}  triggerOnce>
                 <AgendaListWrapper>
                   { _map(dateFutures.slice(0,6), (item, i) => (
                       <AgendaItem key={i} item={item} path="artistes/"/> 
@@ -270,7 +270,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                   ))}
                 </AgendaListWrapper> 
               <BtnPrimary to={`/agenda`}><FormattedMessage id="btn__toutes les dates"/></BtnPrimary>
-              </Fade> 
+              </Reveal> 
           </IntroColDroite>  
           
         </StyledGrid2Col>
