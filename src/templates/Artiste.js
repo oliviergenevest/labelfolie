@@ -36,7 +36,7 @@ const PageInnerProject = styled.div`
   grid-template-areas: "main" "encart";
   grid-template-columns:  minmax(0, 2fr) minmax(350px, 1fr) ;
   grid-gap: 5rem;
-
+align-items: start;
   ${mq.tablet` 
   grid-template-columns: 1fr;
   grid-template-columns:minmax(0, 1fr);
