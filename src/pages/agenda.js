@@ -5,7 +5,8 @@ import Seo from '../components/Seo';
 import  BtnPrimary  from '../components/buttons/ButtonRounded';
 import  AgendaItem  from '../components/agenda/agendaItem';
 import styled from 'styled-components';
-
+import {Reveal, Fade} from "react-awesome-reveal"
+import { fadeInUp, fadeInDown } from "../style/animations"
 
 import {
   PageWrapper,
@@ -72,8 +73,11 @@ const AgendaPage = ({ data, location }) => {
      
       <PageWrapper>   
         <PageInner>
+        <Reveal keyframes={fadeInUp}  triggerOnce>
           <PageTitle centered maxWidth dangerouslySetInnerHTML={{ __html: titre }}/>
+          </Reveal>
           <Text dangerouslySetInnerHTML={{ __html: contenu }}/>
+          <Reveal keyframes={fadeInDown}  triggerOnce>
           <AgendaListWrapper>
             { _map(nodes, (item, i) => (
 
@@ -84,6 +88,7 @@ const AgendaPage = ({ data, location }) => {
           </AgendaListWrapper>
           <Spacer/>
           <StyledBtnPrimary to="/agenda-archives">Dates archivées</StyledBtnPrimary>
+          </Reveal>
         </PageInner>
         <Spacer/>
       </PageWrapper>

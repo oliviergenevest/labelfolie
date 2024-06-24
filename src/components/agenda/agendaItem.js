@@ -21,7 +21,9 @@ text-transform:uppercase;
 `
 const AgendaItemProjet =   styled(Text)`
   display:inline;
-  flex-shrink:0;
+  float:left;
+  padding-right:1rem;
+  
   color:${colors.blue}; 
   font-weight:700;  
   & a:hover {
@@ -60,7 +62,7 @@ const AgendaItemContent =   styled.div`
   display:block;
   gap:1rem;
   width: 100%;
-  /*flex-wrap:wrap;*/
+  & p { text-align:left;}
   & a:hover {
   text-decoration:underline;
   }
@@ -76,7 +78,7 @@ const AgendaItem = ({item, path = '', theme = 'dark'}) => {
             <AgendaItemJour  theme={theme}>
               { format(new Date(item.dateDebutEvenement), 'dd', {locale: fr})}
             </AgendaItemJour>
-            <div style={{'lineHeight':'2.5rem'}}> 
+            <div style={{'lineHeight':'2.5rem','flexGrow':'1'}}> 
               <AgendaItemMois theme={theme}>
                 {format(new Date(item.dateDebutEvenement), 'LLLL yyyy', {locale: fr})}
               </AgendaItemMois> |  

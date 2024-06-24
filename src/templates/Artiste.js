@@ -12,9 +12,10 @@ import Boop from '../components/boop';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import {StructuredText} from "react-datocms";
 import Video from '../components/video';
+import Album from '../components/album';
 import PlayerZik from '../components/players/PlayerZik';
 import {Reveal, Fade} from "react-awesome-reveal"
-import { fadeInUp } from "../style/animations"
+import { fadeInDown, fadeInUp } from "../style/animations"
 import  AgendaItemLight  from '../components/agenda/agendaItemLight';
 // import Swiper core and required modules
 import { Navigation,  FreeMode, Keyboard } from 'swiper/modules';
@@ -144,7 +145,7 @@ const TitleSpectacleWrapper  = styled.div`
   position: relative;
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 `
 
 const TitleSpectacle  = styled.h1`
@@ -273,9 +274,9 @@ const Artiste = ({ data, pageContext, location }) => {
 
               <div>
                 
-                  <Fade><TitleSpectacle>{nom}</TitleSpectacle></Fade>
+              <Reveal keyframes={fadeInUp} ><TitleSpectacle>{nom}</TitleSpectacle></Reveal>
                 
-                   <Reveal keyframes={fadeInUp} ><TeaserSpectacle dangerouslySetInnerHTML={{ __html:teaser }} /></Reveal>
+                   <Reveal keyframes={fadeInDown} ><TeaserSpectacle dangerouslySetInnerHTML={{ __html:teaser }} /></Reveal>
               </div> 
             </TitleSpectacleWrapper>
            
@@ -310,6 +311,14 @@ const Artiste = ({ data, pageContext, location }) => {
                       </>
                     )
 
+                  }}
+                  renderInlineRecord={({ record }) => {
+                    switch (record.__typename) {
+                      case 'DatoCmsAlbum':
+                        return <Album data={record}/>;
+                      default:
+                        return null;
+                    }
                   }}
                 />
               }
@@ -367,6 +376,19 @@ export const projectQuery = graphql`
       teaser 
       content {
         value
+        links {
+          __typename
+          ... on DatoCmsAlbum {
+            id: originalId
+            nom
+            image {
+              gatsbyImageData (
+                width:150
+                height:150
+              )
+            } 
+          }
+        }
         blocks {
           __typename
           ...on DatoCmsImage {

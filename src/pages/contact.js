@@ -13,6 +13,8 @@ import {
   Grid2Col,
   Spacer,
 } from "../components/Elements"
+import {Reveal, Fade} from "react-awesome-reveal"
+import { fadeInUp, fadeInDown } from "../style/animations"
 
 export const contactQuery = graphql`
   query contactQuery {
@@ -42,8 +44,9 @@ const ContactPage =  ({ data }) => {
       
       <PageWrapper>
         <PageInner>
-          <PageTitle>{titre}</PageTitle>
-          
+          <Reveal keyframes={fadeInUp}  triggerOnce>
+            <PageTitle>{titre}</PageTitle>
+          </Reveal>  
         </PageInner>
         <Spacer id="contact" />
       

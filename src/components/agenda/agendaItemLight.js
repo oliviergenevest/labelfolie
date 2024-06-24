@@ -22,7 +22,7 @@ import {
 const AgendaItemMois =   styled.span`
   text-transform:uppercase;
   color:${colors.dark}; 
-  
+    font-weight:700;
 `
 
 const AgendaItemVille =   styled.span`
@@ -41,7 +41,9 @@ const AgendaItemJour =   styled.div`
 const AgendaItemContent =   styled.div`
   display:flex;
   gap:1rem;
-  width: 100%;
+    width: 100%;
+
+  & a {color:${colors.blue};}
   & a:hover{ text-decoration:underline;}
 `
 

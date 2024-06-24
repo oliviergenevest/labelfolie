@@ -1,12 +1,10 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
-import {Reveal, Fade} from "react-awesome-reveal"
-import { fadeInUp } from "../style/animations"
-
 import Seo from "../components/Seo"
 
 import VignetteProjetPerso from "../components/projet/vignetteProjetPerso"
-
+import {Reveal, Fade} from "react-awesome-reveal"
+import { fadeInUp, fadeInDown } from "../style/animations"
 import _map from 'lodash/map';
 import styled from 'styled-components';
 
@@ -74,16 +72,17 @@ const ArtistesPage =  ({ data }) => {
  
       <PageWrapper>
         <PageInner>
-          <PageTitle>{titre}</PageTitle>
-      
-          <Fade>
+          <Reveal keyframes={fadeInUp}  triggerOnce>
+            <PageTitle>{titre}</PageTitle>
+          </Reveal>
+          <Reveal keyframes={fadeInDown}  triggerOnce>
           <FlexListeSpectacle>
          
             { _map(spectacles, (item, i) => (
                   <VignetteProjetPerso key={i} item={item} format="full"/>
             ))}
            </FlexListeSpectacle>
-           </Fade>
+           </Reveal>
            </PageInner>
         <Spacer/>
       </PageWrapper>

@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import FormatDate  from '../components/formatDate'*/
 import { colors ,mq} from '../consts/style';
 import {Reveal, Fade} from "react-awesome-reveal"
-import { fadeInUp } from "../style/animations"
+import { fadeInUp, fadeInDown } from "../style/animations"
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import {
   PageWrapper,
@@ -249,19 +249,19 @@ const IndexPage = ({ data, pageContext, location }) => {
             </LogoWrapper>
             </Reveal>
             <Teaser>{slogan}</Teaser>
-            <Fade direction="left" delay="50">
+            <Reveal keyframes={fadeInDown}  triggerOnce>
             <FlexListeSpectacle>
               { _map(spectacles, (item, i) => (
                     <VignetteSpectacleHomepage key={i} item={item} format="full"/>
               ))}
             </FlexListeSpectacle>
-           </Fade>
+           </Reveal>
           </IntroNewsEdito>
        
           <IntroColDroite>
-              <Fade direction="up" triggerOnce>
+              <Reveal keyframes={fadeInDown}  triggerOnce>
                 <SectionTitle>Agenda</SectionTitle>
-              </Fade>
+              </Reveal>
               <Reveal keyframes={fadeInUp}  triggerOnce>
                 <AgendaListWrapper>
                   { _map(dateFutures.slice(0,6), (item, i) => (
