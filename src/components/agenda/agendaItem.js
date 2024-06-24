@@ -55,7 +55,7 @@ const AgendaItemJour =   styled.div`
   font-weight:800;
   font-size:4.2rem;
   font-family: 'Raleway';
-  color:${props => props.theme === "dark" ? '#999' : '#fff' };
+  color:${props => props.theme === "dark" ? colors.blue : '#fff' };
 `
 
 const AgendaItemContent =   styled.div`

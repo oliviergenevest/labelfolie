@@ -32,7 +32,7 @@ const AgendaItemVille =   styled.span`
 `
 
 const AgendaItemJour =   styled.div`
-  color:#999;
+  color:${colors.blue}; 
   font-weight:800;
   font-size:4.2rem;
    font-family: 'Raleway';
