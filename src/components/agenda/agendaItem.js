@@ -56,7 +56,7 @@ const AgendaItemJour =   styled.div`
   font-size:4.2rem;
   font-family: 'Raleway';
   color:${props => props.theme === "dark" ? colors.blue : '#fff' };
-`
+` 
 
 const AgendaItemContent =   styled.div`
   display:block;
@@ -88,7 +88,7 @@ const AgendaItem = ({item, path = '', theme = 'dark'}) => {
                 <AgendaItemProjet as="span"  theme={theme} style={{'lineHeight':'2.5rem'}}>
                   <Link to ={path + item.spectacle.slug}>{item.spectacle.nom}</Link> 
                 </AgendaItemProjet>
-                <Text dangerouslySetInnerHTML={{ __html: item.details }}  style={{'lineHeight':'2.5rem'}}/>
+                <Text dangerouslySetInnerHTML={{ __html: item.details }}  style={{'lineHeight':'2.5rem',"wordBreak":"auto-phrase"}}/>
               </AgendaItemContent>
              </div>
         </ItemWrapper>

@@ -66,7 +66,7 @@ const AgendaItemLight = ({item, path = ''}) => {
            <AgendaItemVille> {item.ville}</AgendaItemVille>
            <AgendaItemContent>
              
-             <Text dangerouslySetInnerHTML={{ __html: item.details }}  style={{'lineHeight':'2.5rem'}}/>
+             <Text dangerouslySetInnerHTML={{ __html: item.details }}  style={{'lineHeight':'2.5rem',"wordBreak":"auto-phrase"}}/>
            </AgendaItemContent>
           </div>
      </ItemWrapper>
