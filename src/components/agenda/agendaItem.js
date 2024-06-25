@@ -30,7 +30,8 @@ const AgendaItemProjet =   styled(Text)`
     text-decoration:none!important;
   }
     & a {
-    color:${colors.blue}; 
+   
+    font-size:1.6rem;
      color:${props => props.theme === "light" ? colors.dark : colors.blue };
   }
      
@@ -62,7 +63,7 @@ const AgendaItemContent =   styled.div`
   display:block;
   gap:1rem;
   width: 100%;
-  & p { text-align:left;}
+  & p { text-align:left;font-size:1.6rem;}
   & a:hover {
   text-decoration:underline;
   }
@@ -78,17 +79,17 @@ const AgendaItem = ({item, path = '', theme = 'dark'}) => {
             <AgendaItemJour  theme={theme}>
               { format(new Date(item.dateDebutEvenement), 'dd', {locale: fr})}
             </AgendaItemJour>
-            <div style={{'lineHeight':'2.5rem','flexGrow':'1'}}> 
+            <div style={{'lineHeight':'2rem','flexGrow':'1'}}> 
               <AgendaItemMois theme={theme}>
                 {format(new Date(item.dateDebutEvenement), 'LLLL yyyy', {locale: fr})}
               </AgendaItemMois> |  
          
               <AgendaItemVille> {item.ville}</AgendaItemVille>
               <AgendaItemContent >
-                <AgendaItemProjet as="span"  theme={theme} style={{'lineHeight':'2.5rem'}}>
+                <AgendaItemProjet as="span"  theme={theme} style={{'lineHeight':'2rem'}}>
                   <Link to ={path + item.spectacle.slug}>{item.spectacle.nom}</Link> 
                 </AgendaItemProjet>
-                <Text dangerouslySetInnerHTML={{ __html: item.details }}  style={{'lineHeight':'2.5rem',"wordBreak":"auto-phrase"}}/>
+                <Text dangerouslySetInnerHTML={{ __html: item.details }}  style={{'lineHeight':'2rem',"wordBreak":"auto-phrase","fontSize":"1.6rem"}}/>
               </AgendaItemContent>
              </div>
         </ItemWrapper>

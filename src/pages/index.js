@@ -183,7 +183,7 @@ const HomepagePageWrapper = styled(PageWrapper)`
 
 
 const FlexListeSpectacle = styled(Flex)`
-  column-gap:1rem;
+  column-gap:.5rem;
   align-items:flex-start;
   margin-bottom:2rem;
   padding-top:6rem;

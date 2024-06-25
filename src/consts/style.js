@@ -72,7 +72,7 @@ export const font = {
 `,
 // gros titre centré
   title:  ` 
-            font-size:6.4rem;
+            font-size:4.4rem;
             line-height:normal;
             font-weight:600;
             @media screen and (max-width: ${mQueryPoint.tablet}) {

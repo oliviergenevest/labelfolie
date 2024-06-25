@@ -38,7 +38,7 @@ const ItemWrapper = styled(Link)`
  
   &:hover img:not(:first-child) {
     transform:scale(1.1);
-    transition:.3s transform ease-in-out;
+    transition:.2s transform ease-in-out;
   }
   & img:not(:first-child) {
     transition:.3s transform ease-in-out;
@@ -63,7 +63,7 @@ const ItemWrapper = styled(Link)`
 
 const VignetteImage =   styled(GatsbyImage)`
   display:flex;
-  border-radius:20%;
+  border-radius:8px;
   width:150px;
   ${mq.tablet`
   width:100px;
@@ -79,10 +79,7 @@ const VignetteImage =   styled(GatsbyImage)`
     height:auto;
   `}
 `
-/*const VignetteTeaser =   styled(Text)`
-  text-align:center;
-  line-height: 22px;
-`*/
+
 
 // format :  
 // - full : avec affichage du teaser sous le nom du projet au dessus de l'image
@@ -94,11 +91,7 @@ const VignetteSpectacleHomepage = ({item, format}) => {
           
           <VignetteImage image={item.image.gatsbyImageData} alt={item.nom}/>
           <VignetteNom center>{item.nom}</VignetteNom>
-         { /*{format === "short" && <VignetteNom>{item.nom}</VignetteNom>}
-          <div>
-          {format === "full" && <><VignetteNom center>{item.nom}</VignetteNom>
-          <VignetteTeaser dangerouslySetInnerHTML={{ __html:item.teaser }}/></>}
-          </div>*/}
+        
         </ItemWrapper>
     )
 }
