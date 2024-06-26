@@ -12,6 +12,7 @@ import { fadeInUp, fadeInDown } from "../style/animations"
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import {
   PageWrapper,
+  Spacer,
   PageInner,
   Flex,
   Text,
@@ -136,7 +137,7 @@ justify-content:flex-start;
 `
 const IntroColDroite = styled.div`
 
-padding:4rem 4rem 4rem 6rem;
+padding:3rem 4rem 4rem 4rem;
 width:100%;
 display:flex;
 align-items:center;
@@ -269,6 +270,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                   
                   ))}
                 </AgendaListWrapper> 
+                <Spacer/>
               <BtnPrimary to={`/agenda`}><FormattedMessage id="btn__toutes les dates"/></BtnPrimary>
               </Reveal> 
           </IntroColDroite>  

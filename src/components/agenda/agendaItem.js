@@ -23,7 +23,7 @@ const AgendaItemProjet =   styled(Text)`
   display:inline;
   float:left;
   padding-right:1rem;
-  
+  font-size:1.6rem;
   color:${colors.blue}; 
   font-weight:700;  
   & a:hover {

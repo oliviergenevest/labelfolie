@@ -10,15 +10,25 @@ import { mq, colors } from '../../consts/style';
 
 
 const VignetteNom =   styled.span`
-  
-  text-align:  ${props => (props.center  ? 'center' : 'left' )};
+  position:absolute;
+  bottom:0;
+  padding:.5rem;
+  text-align:  center;
   margin-bottom:0;
-  margin-top:1rem;
-  opacity:0;
+  /*margin-top:1rem;*/
+
   line-height: 2rem;
-  max-width: 100px;
+  max-width: 100%;
   color: white;
   transform:translateY(10px);
+    opacity:0;
+  background: #000000f2;
+  border-radius:  0 0 8px 8px;
+  display: flex;
+  width:100%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 
 `
 const ItemWrapper = styled(Link)`
@@ -53,7 +63,7 @@ const ItemWrapper = styled(Link)`
   }
 */
   &:hover ${VignetteNom} {
-    color:${colors.blue};
+    color:${colors.light};
     opacity: 1;
     transform: translateY(0);
     transition: all .3s ease;
