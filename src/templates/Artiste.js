@@ -14,7 +14,7 @@ import {StructuredText} from "react-datocms";
 import Video from '../components/video';
 import Album from '../components/album';
 import PlayerZik from '../components/players/PlayerZik';
-import {Reveal, Fade} from "react-awesome-reveal"
+import {Reveal} from "react-awesome-reveal"
 import { fadeInDown, fadeInUp } from "../style/animations"
 import  AgendaItemLight  from '../components/agenda/agendaItemLight';
 // import Swiper core and required modules
@@ -158,11 +158,7 @@ const TitleSpectacle  = styled.h1`
   margin-bottom: 0;
 `
 
-const CompagnieName  = styled(Text)`
- /*font-family: 'Raleway';*/
- 
 
-`
 
 
 const TeaserSpectacle  = styled.div`
@@ -192,18 +188,10 @@ const AgendaListWrapper =   styled.div`
   margin-top:1rem;
 `
 
-/*
-const GridItem = styled.div`
-background-color:${colors.blueLight};
-border-top:8px solid  rgba(9, 255, 0, 0.37);
-width:100%;
-padding:2rem;
-`;
-*/
 
 const Artiste = ({ data, pageContext, location }) => {
 
-  const {  nom, compagnie, teaser, content, diaporama, encart,seoMetaTags} = data.spectacle;
+  const {  nom, teaser, content, diaporama, encart,seoMetaTags} = data.spectacle;
 /*
   const prevRef = useRef(null);
   const nextRef = useRef(null);*/
@@ -280,7 +268,7 @@ const Artiste = ({ data, pageContext, location }) => {
               </div> 
             </TitleSpectacleWrapper>
            
-            <CompagnieName dangerouslySetInnerHTML={{ __html:compagnie }}/>
+       
           </HeaderSpectacle>
           <PageInnerProject>
  
@@ -365,7 +353,6 @@ export const projectQuery = graphql`
     }
     spectacle: datoCmsSpectacle(slug: { eq: $slug }) {
       nom
-      compagnie
       encart
       diaporama {
         gatsbyImageData (

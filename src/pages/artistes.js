@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Seo from "../components/Seo"
 
 import VignetteProjetPerso from "../components/projet/vignetteProjetPerso"
-import {Reveal, Fade} from "react-awesome-reveal"
+import {Reveal} from "react-awesome-reveal"
 import { fadeInUp, fadeInDown } from "../style/animations"
 import _map from 'lodash/map';
 import styled from 'styled-components';

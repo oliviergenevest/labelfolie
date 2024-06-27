@@ -12,10 +12,7 @@ import {
   PageWrapper,
   PageInner,
   PageTitle,
-  Text,
-  Grid2Col,
-  Spacer,
- 
+  Text
 } from '../components/Elements';
 
 
