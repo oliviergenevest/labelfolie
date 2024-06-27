@@ -54,14 +54,7 @@ export const agendaArchivesQuery = graphql`
           compagnie
           nom 
           slug
-          image {
-            gatsbyImageData(
-              placeholder: BLURRED,
-              forceBlurhash: false,   
-              width:200,
-              height:133,
-            )
-          } 
+         
         }
       }
     }
@@ -81,12 +74,12 @@ const AgendaArchivesPage = ({ data }) => {
    
       <PageWrapper>   
         <PageInner>
-          <PageTitle centered maxWidth dangerouslySetInnerHTML={{ __html: titre }}/>
+          <PageTitle  dangerouslySetInnerHTML={{ __html: titre }}/>
           <Text dangerouslySetInnerHTML={{ __html: contenu }}/> 
           <AgendaListWrapper>
 
             { _map(nodes, (item, i) => (  
-                 <AgendaItem key={i} item={item} path='../spectacles/'/>
+                 <AgendaItem key={i} item={item} path='../artistes/'/>
             ))
           }
            

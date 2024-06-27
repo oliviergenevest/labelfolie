@@ -38,7 +38,9 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
- 
+  ${mq.mobile`
+      height: 8rem;
+    `}
   ${mq.tablet`
      padding: 0 2rem;
     
