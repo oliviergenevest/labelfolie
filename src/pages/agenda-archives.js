@@ -51,7 +51,6 @@ export const agendaArchivesQuery = graphql`
         dateFinEvenement
         spectacle {
           background { hex }
-          compagnie
           nom 
           slug
          

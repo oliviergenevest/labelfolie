@@ -51,7 +51,6 @@ export const agendaQuery = graphql`
         dateDebutEvenement
         dateFinEvenement
         spectacle {
-          compagnie
           nom
           slug 
         } 
