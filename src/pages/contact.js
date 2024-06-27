@@ -13,8 +13,8 @@ import {
   Grid2Col,
   Spacer,
 } from "../components/Elements"
-import {Reveal, Fade} from "react-awesome-reveal"
-import { fadeInUp, fadeInDown } from "../style/animations"
+import {Reveal} from "react-awesome-reveal"
+import { fadeInUp } from "../style/animations"
 
 export const contactQuery = graphql`
   query contactQuery {
@@ -23,7 +23,7 @@ export const contactQuery = graphql`
     page: datoCmsPageContact {
       titre
       contenu
-      contenuColonne
+      
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
@@ -35,7 +35,7 @@ const ContactPage =  ({ data }) => {
   const {
     titre,
     contenu,
-    contenuColonne,
+   
     
   } = data.page
 
@@ -62,9 +62,7 @@ const ContactPage =  ({ data }) => {
               <div>
              <ContactForm/>
 </div>
-              {/* 
-              <ContactForm />
-              */}
+            
             </Grid2Col>
           </PageInner>
         

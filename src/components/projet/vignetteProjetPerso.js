@@ -64,7 +64,7 @@ const ItemWrapper = styled(Link)`
 
 const VignetteNom =   styled.h2`
   ${font.h2}  
-  text-align:  ${props => (props.center  ? 'center' : 'left' )};
+  text-align:  ${props => (props.$center  ? 'center' : 'left' )};
   margin-bottom:0;
   margin-top:1rem;
 
@@ -97,7 +97,7 @@ const VignetteProjetPerso = ({item, format}) => {
           <VignetteImage image={item.image.gatsbyImageData} alt={item.nom}/>
           {format === "short" && <VignetteNom>{item.nom}</VignetteNom>}
           <div>
-          {format === "full" && <><VignetteNom center>{item.nom}</VignetteNom>
+          {format === "full" && <><VignetteNom $center>{item.nom}</VignetteNom>
           <VignetteTeaser dangerouslySetInnerHTML={{ __html:item.teaser }}/></>}
           </div>
         </ItemWrapper>

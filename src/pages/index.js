@@ -1,24 +1,20 @@
-import React, { Fragment, useEffect} from 'react';
+import React, { Fragment} from 'react';
 import { graphql } from 'gatsby';
-import {useSpring, animated} from '@react-spring/web';
+//import {useSpring, animated} from '@react-spring/web';
 import _map from 'lodash/map';
 import { FormattedMessage} from 'react-intl';
 import styled from 'styled-components';
 /*import { Icon } from '@iconify/react';
 import FormatDate  from '../components/formatDate'*/
 import { colors ,mq} from '../consts/style';
-import {Reveal, Fade} from "react-awesome-reveal"
+import {Reveal} from "react-awesome-reveal"
 import { fadeInUp, fadeInDown } from "../style/animations"
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import {
-  PageWrapper,
+  
   Spacer,
-  PageInner,
   Flex,
-  Text,
   SectionTitle,
-  SectionTitleLeft,
-  BgWrap
 } from '../components/Elements';
 import  BtnPrimary  from '../components/buttons/ButtonRounded';
 import  NavHomepage  from '../components/navHomepage';
@@ -177,10 +173,6 @@ const Logo = styled(GatsbyImage)`
   z-index:1;
 `;
 
-const HomepagePageWrapper = styled(PageWrapper)`
-  padding-top:0;
-  margin-top:0;
-`;
 
 
 const FlexListeSpectacle = styled(Flex)`
@@ -211,19 +203,19 @@ const IndexPage = ({ data, pageContext, location }) => {
     slogan,
     logo,
     spectacles,
-    editoHomepage
+   // editoHomepage
     } = data.datoCmsHomepage;
   const { nodes } = data.agenda; // toutes les dates
 
-  const [{st}, set] = useSpring(()=>({st:0}))
-  const interpolationTurbine = st.to(o => `rotate(${o/6}deg`)
-
+  //const [{st}, set] = useSpring(()=>({st:0}))
+  //const interpolationTurbine = st.to(o => `rotate(${o/6}deg`)
+/*
   useEffect(() => {
     const onMouseMove = e => set({st: (e.clientX + e.clientY)}) ;
     window.addEventListener("mousemove", onMouseMove);
    
     return () => window.removeEventListener("mousemove", onMouseMove);
-  });
+  });*/
 
   //console.log("interpolationTurbine:", interpolationTurbine)
   const dateDuJour = new Date();
@@ -244,9 +236,9 @@ const IndexPage = ({ data, pageContext, location }) => {
             <NavHomepage/>
             <Reveal keyframes={fadeInUp}  triggerOnce>
             <LogoWrapper>
-              <animated.div style={{/*transform:interpolationTurbine,"zIndex":"1"*/}}>
+             
                 <Logo image={logo.gatsbyImageData} alt="Label Folie" />
-              </animated.div>
+             
             </LogoWrapper>
             </Reveal>
             <Teaser>{slogan}</Teaser>

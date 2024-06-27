@@ -2,7 +2,7 @@ import React from 'react';
 import { fr } from 'date-fns/locale';
 import { format } from 'date-fns';
 import styled from 'styled-components';
-import { mq, colors, font } from '../../consts/style'; 
+import {  colors } from '../../consts/style'; 
 import Link from '../ExtendedLink';
 
 import {

@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import { FormattedMessage} from 'react-intl';
 import Link from './ExtendedLink';
 import { colors, font,  boxShadow, mq } from '../consts/style';
-/*import  BtnPrimary from './buttons/ButtonRounded';
-import  { LanguageSwitcher }  from './language-switcher';
-import {  Flex } from './Elements';*/
 import { headerTypes } from '../types/propTypes';
 import { Menu4 as MenuAltRight } from '@styled-icons/remix-fill';
 import { XCircle } from '@styled-icons/bootstrap';
@@ -14,7 +11,6 @@ import { useSpring, animated } from '@react-spring/web'
 import { Icon } from '@iconify/react';
 import facebookRect from '@iconify/icons-brandico/facebook-rect';
 
-import Boop from './boop';
 import { StaticImage } from "gatsby-plugin-image"
 
 
@@ -37,7 +33,7 @@ const Wrapper = styled.div`
 
   background:#fff;
   ${boxShadow};
-  height: auto;
+  height: 13.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,27 +46,12 @@ const Wrapper = styled.div`
    
 `;
 
-
-/*
-const LanguageSwitcherWrap = styled.div`
-  position:absolute;
-  right: 0;
-  padding: 0 2rem;
-  background-color: white;
-  height: 100%;
-  ${mq.tablet`
-    display:none;
-   `}
-
-`;*/
-
 const HeaderInner = styled.div`
   display: flex;
   width: 124rem;
   justify-content: space-between;
   align-items: center;
   padding:  1rem 0;
-  /* flex-wrap: nowrap;*/
 `;
 
 

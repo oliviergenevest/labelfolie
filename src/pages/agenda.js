@@ -5,7 +5,7 @@ import Seo from '../components/Seo';
 import  BtnPrimary  from '../components/buttons/ButtonRounded';
 import  AgendaItem  from '../components/agenda/agendaItem';
 import styled from 'styled-components';
-import {Reveal, Fade} from "react-awesome-reveal"
+import {Reveal} from "react-awesome-reveal"
 import { fadeInUp, fadeInDown } from "../style/animations"
 
 import {
@@ -74,7 +74,7 @@ const AgendaPage = ({ data, location }) => {
       <PageWrapper>   
         <PageInner>
         <Reveal keyframes={fadeInUp}  triggerOnce>
-          <PageTitle centered maxWidth dangerouslySetInnerHTML={{ __html: titre }}/>
+          <PageTitle $centered $maxWidth dangerouslySetInnerHTML={{ __html: titre }}/>
           </Reveal>
           <Text dangerouslySetInnerHTML={{ __html: contenu }}/>
           <Reveal keyframes={fadeInDown}  triggerOnce>

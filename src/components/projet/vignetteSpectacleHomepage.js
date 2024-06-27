@@ -1,13 +1,8 @@
 import React from 'react';
-//import { fr } from 'date-fns/locale';
 import styled from 'styled-components';
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from 'gatsby';
 import { mq, colors } from '../../consts/style'; 
-/*import {
-    Text,
-  } from "../Elements"*/
-
 
 const VignetteNom =   styled.span`
   position:absolute;
@@ -15,13 +10,11 @@ const VignetteNom =   styled.span`
   padding:.5rem;
   text-align:  center;
   margin-bottom:0;
-  /*margin-top:1rem;*/
-
   line-height: 2rem;
   max-width: 100%;
   color: white;
   transform:translateY(10px);
-    opacity:0;
+  opacity:0;
   background: #000000f2;
   border-radius:  0 0 8px 8px;
   display: flex;
@@ -35,7 +28,7 @@ const ItemWrapper = styled(Link)`
   display:flex;
   position: relative;
   flex-direction:column;
-  /*max-width: 550px;*/
+  
   margin-bottom:1rem;
   background-color:${props => (props.backgroundColor  ? props.backgroundColor : 'inherit' )};
   align-self: stretch;
@@ -76,10 +69,10 @@ const VignetteImage =   styled(GatsbyImage)`
   border-radius:8px;
   width:150px;
   ${mq.tablet`
-  width:100px;
+  width:120px;
   `}
   ${mq.tabletSmall`
-  width:80px;
+  width:100px;
   `}
   flex-direction:row;
   height:auto;
@@ -100,7 +93,7 @@ const VignetteSpectacleHomepage = ({item, format}) => {
         <ItemWrapper to={`artistes/`+item.slug} title={item.nom} format= {format}>
           
           <VignetteImage image={item.image.gatsbyImageData} alt={item.nom}/>
-          <VignetteNom center>{item.nom}</VignetteNom>
+          <VignetteNom $center>{item.nom}</VignetteNom>
         
         </ItemWrapper>
     )

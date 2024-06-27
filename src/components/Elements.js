@@ -68,8 +68,8 @@ export const Title = styled.h1`
    color:${colors.blue};
    margin: 0 auto;
    margin-top:1rem;
-   text-align:${props => props.centered ? 'center' : 'left' };
-    max-width:${props => props.maxWidth ? '780px' : 'none' };
+   text-align:${props => props.$centered ? 'center' : 'left' };
+    max-width:${props => props.$maxWidth ? '780px' : 'none' };
 `;
 
 
