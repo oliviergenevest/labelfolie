@@ -34,6 +34,14 @@ export const aProposPageQuery = graphql`
           placeholder: BLURRED,
           width:1204,
           forceBlurhash: false,
+           imgixParams: {
+                
+                auto: "compress",
+               
+                w: "1204",
+                
+                fit:"crop" 
+              }
         )
       }
       seoMetaTags {

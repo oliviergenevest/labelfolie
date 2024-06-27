@@ -369,8 +369,15 @@ export const projectQuery = graphql`
       encart
       diaporama {
         gatsbyImageData (
-          height:550,
-          width:825,
+        
+           imgixParams: {
+                
+                auto: "compress",
+                h:"400",
+                w: "825",
+                crop: "focalpoint",
+                fit:"crop" 
+              }
         )
       }
       teaser 

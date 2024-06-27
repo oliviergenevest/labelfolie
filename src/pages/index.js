@@ -47,8 +47,15 @@ export const indexQuery = graphql`
           gatsbyImageData(
             placeholder: BLURRED,
             forceBlurhash: false,   
-            width:150,
-            height:150,
+           
+             imgixParams: {
+                q:80,
+                auto: "compress",
+                h:"150",
+                w: "150",
+                crop: "focalpoint",
+                fit:"crop" 
+              }
           )
         }
     }

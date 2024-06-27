@@ -47,8 +47,14 @@ export const projetsPageQuery = graphql`
             gatsbyImageData(
               placeholder: BLURRED,
               forceBlurhash: false,   
-              width:567,
-              height:800,
+             
+              imgixParams: {
+                auto: "compress",
+                h:"800",
+                w: "567",
+                crop: "focalpoint",
+                fit:"crop"
+              }
             )
           }
       }
