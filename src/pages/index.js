@@ -80,7 +80,6 @@ export const indexQuery = graphql`
         dateFinEvenement
         spectacle {
           nom
-          compagnie
           slug
           background { hex }
           
