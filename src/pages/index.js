@@ -26,10 +26,7 @@ export const indexQuery = graphql`
  query datoCmsHomepage {
     datoCmsHomepage{
       slogan
-      editoHomepage {
-        contenu 
-       
-      }
+      
       logo {
         title
         gatsbyImageData (
