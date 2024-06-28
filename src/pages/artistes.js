@@ -5,8 +5,8 @@ import Seo from "../components/Seo"
 import VignetteProjetPerso from "../components/projet/vignetteProjetPerso"
 import {Reveal} from "react-awesome-reveal"
 import { fadeInUp, fadeInDown } from "../style/animations"
-import _map from 'lodash/map';
-import styled from 'styled-components';
+import _map from 'lodash/map'
+import styled from 'styled-components'
 
 import {
   PageWrapper,
@@ -19,7 +19,7 @@ import {
 } from "../components/Elements"
 
 
-const FlexListeSpectacle = styled(Flex)`
+const FlexListeSpectacle = styled(Flex)` 
   column-gap:4rem;
   align-items:flex-start;
   margin-bottom:5rem;
