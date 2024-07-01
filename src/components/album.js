@@ -19,11 +19,12 @@ const Image = styled(GatsbyImage)`
     width:150px;
     height:150px;
 `
-
+ 
 const Album = ({ data }) => (
   <WrapperAlbum>
    <Image image={data.image.gatsbyImageData} alt={data.nom} />
-    <span>{data.nom}</span>
+    <span>{data.nom} - {data.annee}</span>
+  
     
   </WrapperAlbum>
  

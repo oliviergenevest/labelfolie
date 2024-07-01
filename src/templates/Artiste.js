@@ -375,6 +375,7 @@ export const projectQuery = graphql`
           ... on DatoCmsAlbum {
             id: originalId
             nom
+            annee
             image {
               gatsbyImageData (
                 width:150
