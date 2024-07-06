@@ -10,7 +10,9 @@ module.exports = {
   },
 
 
-  
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
