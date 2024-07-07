@@ -1,0 +1,2 @@
+ # Redirect all traffic from your Netlify subdomain to your primary domain:
+https://labelfolie.netlify.com/*   https://labelfolie.com/:splat   301!
