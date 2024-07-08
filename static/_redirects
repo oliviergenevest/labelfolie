@@ -1,2 +1,30 @@
  # Redirect all traffic from your Netlify subdomain to your primary domain:
 https://labelfolie.netlify.app/*   https://labelfolie.com/:splat   301!
+# Redirect with a 301 (permanent)
+/index.html         /              301
+/banann-jug.html /artistes/banan-n-jug/ 301
+/balaio.html /artistes/balaio/ 301
+/full-tuekan.html /artistes/full-tukan/ 301
+/orchestre-syncopatique.html /artistes/orchestre-syncopatique/ 301
+/la-meute.html /artistes/la-meute/ 301
+/marie-armande.html /artistes/marie-armande/ 301
+/muet.html /artistes/muet/ 301
+/otimani.html /artistes/otimani/ 301
+/caramel-cachichi-jeune-public.html /artistes/caramel-cachichi-jeune-public/ 301
+/artistes.html /artistes/ 301
+/label-folie.html /a-propos/ 301
+/llimace.html / 301
+/iaross.html / 301
+/connie-blyde.html / 301
+/boutique.html / 301
+/cd.html / 301
+/cd/* / 301
+/news-detail/* / 301
+/credits.html /credits/ 301
+/contacts.html /contact/ 301
+/agenda/* /agenda/ 301
+/iaross-nous-nous-sommes-oublies.html / 301
+/des-fourmis-dans-les-mains-87/des-fourmis-dans-les-mains-les-100-pas.html / 301
+/des-fourmis-dans-les-mains-87/des-fourmis-dans-les-mains-un-grand-feu-2019.html / 301
+/des-fourmis-dans-les-mains-87/des-fourmis-dans-les-mains-les-100-pas.html / 301
+/des-fourmis-dans-les-mains-87/des-fourmis-dans-les-mains-partout-des-gens-2014.html / 301

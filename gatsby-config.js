@@ -59,7 +59,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        excludes: ['/protection-des-donnees', '/mentions-legales','/credits','/protection-des-donnees/', '/mentions-legales/','/credits/' ],
+        excludes: ['/protection-des-donnees','/succes', '/succes/', '/mentions-legales','/credits','/protection-des-donnees/', '/mentions-legales/','/credits/' ],
       },
     },
     {
