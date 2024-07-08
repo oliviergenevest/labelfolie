@@ -19,10 +19,11 @@ https://labelfolie.netlify.app/*   https://labelfolie.com/:splat   301!
 /boutique.html / 301
 /cd.html / 301
 /cd/* / 301
+/detail.html / 301
 /news-detail/* / 301
 /credits.html /credits/ 301
 /contacts.html /contact/ 301
-/agenda/* /agenda/ 301
+/agenda/* /agenda/ 301!
 /iaross-nous-nous-sommes-oublies.html / 301
 /des-fourmis-dans-les-mains-87/des-fourmis-dans-les-mains-les-100-pas.html / 301
 /des-fourmis-dans-les-mains-87/des-fourmis-dans-les-mains-un-grand-feu-2019.html / 301
