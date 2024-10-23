@@ -195,7 +195,7 @@ const Artiste = ({ data, pageContext, location }) => {
 /*
   const prevRef = useRef(null);
   const nextRef = useRef(null);*/
- // console.log(data.dates)
+  //console.log(content.value)
   return (
     <Fragment>
       <Seo meta={seoMetaTags} />
@@ -273,7 +273,7 @@ const Artiste = ({ data, pageContext, location }) => {
           <PageInnerProject>
  
             <div>         
-              {(content.blocks.length > 0) && <StructuredText
+              {(content.blocks.length > 0 || content.value) && <StructuredText
                   data={content}
                   renderBlock={({record}) => {
                     if (record.__typename === "DatoCmsSoundcloudPlayer") {
