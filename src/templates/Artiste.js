@@ -78,7 +78,7 @@ ${mq.tabletSmall`
  }
   .swiper-slide .gatsby-image-wrapper  {
      transition:all .4s ease;
-     height:400px;
+     height:auto;
   }
   .swiper-slide-active .gatsby-image-wrapper {
     transition:all .4s ease;
@@ -209,14 +209,14 @@ const Artiste = ({ data, pageContext, location }) => {
               nextEl:'.next',
             }}
             spaceBetween={5}
-            slidesPerView={1}
+            //slidesPerView={1}
             keyboard={{enabled:true,}}
             grabCursor
             
             
             breakpoints={{
-              // when window width is >= 640px
-              640: {
+              // when window width is >= 784
+              784: {
                 slidesPerView: 2,
                 spaceBetween : 5,
               },
@@ -271,8 +271,24 @@ const Artiste = ({ data, pageContext, location }) => {
        
           </HeaderSpectacle>
           <PageInnerProject>
- 
-            <div>         
+  
+            <div>    
+            {(data.dates.nodes.length > 0) &&  
+                    <>
+                      <h2>Les prochaines dates </h2>   
+                      
+                      <AgendaListWrapper>
+                      
+                    { data.dates.nodes.map((item, i) => {
+                        return (  <AgendaItemLight key={i} item={item} /> )
+                    })
+                    }
+                    
+                      </AgendaListWrapper>
+                      <Spacer/>
+                    </>
+                  }
+                       
               {(content.blocks.length > 0 || content.value) && <StructuredText
                   data={content}
                   renderBlock={({record}) => {
@@ -312,21 +328,7 @@ const Artiste = ({ data, pageContext, location }) => {
               }
 
     
-              {(data.dates.nodes.length > 0) &&  
-                    <><Spacer/>
-                      <h2>Les prochaines dates </h2>   
-                      <br/>
-                      <AgendaListWrapper>
-                      
-                    { data.dates.nodes.map((item, i) => {
-                        return (  <AgendaItemLight key={i} item={item} /> )
-                    })
-                    }
-                    
-                      </AgendaListWrapper>
-                    </>
-                  }
-                  
+             
             </div>
             <ColEncart>
              <Text dangerouslySetInnerHTML={{ __html:encart }} style={{"textAlign":"left"}}/>
@@ -360,8 +362,8 @@ export const projectQuery = graphql`
            imgixParams: {
                 
                 auto: "compress",
-                h:"400",
-                w: "825",
+                h:"600",
+                w: "800",
                 crop: "focalpoint",
                 fit:"crop" 
               }
