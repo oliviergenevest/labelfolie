@@ -314,7 +314,21 @@ const Artiste = ({ data, pageContext, location }) => {
               }
 
     
-             
+              {(data.dates.nodes.length > 0) &&  
+                <><Spacer/>
+                  <h2>Les prochaines dates </h2>   
+                  
+                  <AgendaListWrapper>
+                  
+                { data.dates.nodes.map((item, i) => {
+                    return (  <AgendaItemLight key={i} item={item} /> )
+                })
+                }
+                
+                  </AgendaListWrapper>
+                  
+                </>
+              }
             </div>
             <ColEncart>
              <Text dangerouslySetInnerHTML={{ __html:encart }} style={{"textAlign":"left"}}/>
