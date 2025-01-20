@@ -273,21 +273,7 @@ const Artiste = ({ data, pageContext, location }) => {
           <PageInnerProject>
   
             <div>    
-            {(data.dates.nodes.length > 0) &&  
-                    <>
-                      <h2>Les prochaines dates </h2>   
-                      
-                      <AgendaListWrapper>
-                      
-                    { data.dates.nodes.map((item, i) => {
-                        return (  <AgendaItemLight key={i} item={item} /> )
-                    })
-                    }
-                    
-                      </AgendaListWrapper>
-                      <Spacer/>
-                    </>
-                  }
+           
                        
               {(content.blocks.length > 0 || content.value) && <StructuredText
                   data={content}
